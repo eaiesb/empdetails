@@ -15,7 +15,7 @@ steps { buildsrc() }
 
 stage('renaming the target zip file') {
     steps {
-               sh 'mv target/helloworld-1.0.0-SNAPSHOT.zip helloworld.zip'
+               sh 'mv target/empdetails-1.0.0-SNAPSHOT.zip empdetails.zip'
     }
 }  
 stage("Buildimg") {
@@ -38,12 +38,12 @@ dir ('.' ) {
 }
 def buildApp() {
 dir ('' ) {
-def appImage = docker.build("eaiesbhub/mulehelloworld:${BUILD_NUMBER}")
+def appImage = docker.build("eaiesbhub/empdetails:${BUILD_NUMBER}")
 }
 }
 def deploy() {
 
-	def containerName = 'mulehelloworld'
+	def containerName = 'empdetails'
 
 	sh "docker ps -f name=${containerName} -q | xargs --no-run-if-empty docker stop"
 	sh "docker ps -a -f name=${containerName} -q | xargs -r docker rm"
