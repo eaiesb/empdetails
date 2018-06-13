@@ -8,6 +8,7 @@ ENV MULE_HOME=${MULE_HOME} \
 #Deploying the empdetails.zip to mule apps directory
   
 ADD ./empdetails.zip /root/mule-standalone-3.9.0/apps/
+ADD ./postgresql-42.1.4.jar /root/mule-standalone-3.9.0/lib/
 
 RUN chmod -R 777 /root/
 
