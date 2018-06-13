@@ -5,9 +5,9 @@ ARG MULE_HOME=/root/mule-standalone-3.9.0
 ENV MULE_HOME=${MULE_HOME} \
     PATH=$PATH:$MULE_HOME/bin
     
-#Deploying the helloworld.zip to mule apps directory
+#Deploying the empdetails.zip to mule apps directory
   
-ADD ./helloworld.zip /root/mule-standalone-3.9.0/apps/
+ADD ./empdetails.zip /root/mule-standalone-3.9.0/apps/
 
 RUN chmod -R 777 /root/
 
