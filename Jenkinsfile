@@ -15,7 +15,7 @@ steps { buildsrc() }
 
 stage('renaming the target zip file') {
     steps {
-               sh 'mv target/empdetails-1.0.0-SNAPSHOT.zip empdetails.zip'
+               sh 'mv target/retriveemployeedetails-1.0.0-SNAPSHOT.zip empdetails.zip'
     }
 }  
 stage("Buildimg") {
