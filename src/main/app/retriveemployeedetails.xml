@@ -14,6 +14,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
     <context:property-placeholder location="App_local.properties"/>
     <flow name="retriveemployeedetailsFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/Emp_Details" doc:name="HTTP"/>
+        <logger message="Connect to Postgres" level="INFO" doc:name="Logger"/>
         <db:select config-ref="Generic_Database_Configuration" doc:name="Database">
             <db:parameterized-query><![CDATA[SELECT * FROM "Employee"."Employee_Details";]]></db:parameterized-query>
         </db:select>
