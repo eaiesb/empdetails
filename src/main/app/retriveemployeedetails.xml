@@ -18,6 +18,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
         <db:select config-ref="Generic_Database_Configuration" doc:name="Database">
             <db:parameterized-query><![CDATA[SELECT * FROM "Employee"."Employee_Details";]]></db:parameterized-query>
         </db:select>
+        <logger message="DB Connection Completed" level="INFO" doc:name="Logger"/>
         <json:object-to-json-transformer doc:name="Object to JSON"/>
     </flow>
 </mule>
